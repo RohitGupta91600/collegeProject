@@ -22,7 +22,7 @@ const Dashboard: React.FC = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('https://backend-c607.onrender.com/api/products', {
+      const response = await axios.get('https://backend-64om.onrender.com/api/products', {
         headers: { Authorization: token },
       });
       setProducts(response.data);
@@ -33,7 +33,7 @@ const Dashboard: React.FC = () => {
 
   const handleAddProduct = async (product: Omit<Product, '_id'>) => {
     try {
-      const response = await axios.post('https://backend-c607.onrender.com/api/products', product, {
+      const response = await axios.post('https://backend-64om.onrender.com/api/products', product, {
         headers: { Authorization: token },
       });
       setProducts([...products, response.data]);
@@ -44,7 +44,7 @@ const Dashboard: React.FC = () => {
 
   const handleUpdateProduct = async (id: string, updatedProduct: Omit<Product, '_id'>) => {
     try {
-      const response = await axios.put(`https://backend-c607.onrender.com/api/products/${id}`, updatedProduct, {
+      const response = await axios.put(`https://backend-64om.onrender.com/api/products/${id}`, updatedProduct, {
         headers: { Authorization: token },
       });
       setProducts(products.map(p => p._id === id ? response.data : p));
@@ -56,7 +56,7 @@ const Dashboard: React.FC = () => {
 
   const handleDeleteProduct = async (id: string) => {
     try {
-      await axios.delete(`https://backend-c607.onrender.com/api/products/${id}`, {
+      await axios.delete(`https://backend-64om.onrender.com/api/products/${id}`, {
         headers: { Authorization: token },
       });
       setProducts(products.filter(p => p._id !== id));
