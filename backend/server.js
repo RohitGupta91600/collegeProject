@@ -17,7 +17,7 @@ app.use(express.json());
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://rohit:EkauhCWLC5yTq9w8@cluster0.1vmgt.mongodb.net/', {
+mongoose.connect('mongodb+srv://rohit:qzpVxfzcHLbE9jY4@cluster0.1vmgt.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
