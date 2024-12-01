@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -11,10 +10,19 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/mern_product_management', {
+// mongoose.connect('mongodb://localhost:27017/mern_product_management', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/CollegeProject', {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.error(err)); 1
 
 // User model
 const UserSchema = new mongoose.Schema({
