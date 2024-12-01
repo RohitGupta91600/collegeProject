@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/login', { username, password });
+      const response = await axios.post('https://backend-c607.onrender.com/api/login', { username, password });
       login(response.data.token);
       naviagte('/dashboard');
     } catch (error) {
